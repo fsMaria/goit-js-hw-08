@@ -79,3 +79,13 @@ const galleryList = galleryItems.reduce((acc, img) => {
 }, ''); 
 
 galleryRef.insertAdjacentHTML('beforeend', galleryList);
+
+// Oткрытие модального окна по клику на элементе галереи. Подмена значения атрибута src
+galleryRef.addEventListener('click', (e) => {
+    galleryItems.forEach((elem) => {
+      if (e.target.alt === elem.description) {
+        lightboxImagesRef.src = elem.original
+        lightboxImagesRef.alt = elem.description
+      }
+      openModalRef.classList.add('is-open')
+  })})
