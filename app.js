@@ -76,6 +76,6 @@ const modalContentRef = document.querySelector('.lightbox__content');
 const galleryList = galleryItems.reduce((acc, img) => {
   let createImage = `<li class="gallery__item"><a class="gallery__link"><img src="${img.preview}" alt="${img.description}" class="gallery__image" ></a></li>`
   return acc + createImage
-}, '');
+}, ''); 
 
 galleryRef.insertAdjacentHTML('beforeend', galleryList);
