@@ -63,3 +63,19 @@ const galleryItems = [
       description: 'Lighthouse Coast Sea',
     },
   ];
+
+  const galleryRef = document.querySelector('.js-gallery');
+const openModalRef = document.querySelector('.js-lightbox');
+const lightboxImagesRef = document.querySelector('.lightbox__image');
+const gallery = document.querySelectorAll('.gallery');
+const closeModalBtnRef = document.querySelector('[data-action="close-lightbox"]');
+const modalContentRef = document.querySelector('.lightbox__content');
+
+// Создание и рендер разметки по массиву
+
+const galleryList = galleryItems.reduce((acc, img) => {
+  let createImage = `<li class="gallery__item"><a class="gallery__link"><img src="${img.preview}" alt="${img.description}" class="gallery__image" ></a></li>`
+  return acc + createImage
+}, '');
+
+galleryRef.insertAdjacentHTML('beforeend', galleryList);
