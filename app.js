@@ -89,3 +89,20 @@ galleryRef.addEventListener('click', (e) => {
       }
       openModalRef.classList.add('is-open')
   })})
+
+  // Закрытие модального окна и очистка значения атрибута src элемента
+
+openModalRef.addEventListener('click', (e) => {
+    if (e.target.nodeName === 'IMG') {
+      return
+    }
+    if (e.target.nodeName === closeModalBtnRef) {
+      openModalRef.classList.remove('is-open')
+      lightboxImagesRef.src = '';
+      lightboxImagesRef.alt = '';
+      return
+    }
+    openModalRef.classList.remove('is-open')
+    lightboxImagesRef.src = '';
+    lightboxImagesRef.alt = '';
+  })
